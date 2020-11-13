@@ -30,7 +30,6 @@ app.use(express.static(assetsPath))
 
 
 // load routers
-// app.use('/', require('./server/routes/router'))
 app.use(route)
 
 app.listen(PORT, ()=> { console.log(`Server is running on http://localhost:${PORT}`)});
