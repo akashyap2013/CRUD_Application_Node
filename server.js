@@ -5,7 +5,8 @@ const bodyparser = require("body-parser");
 const path = require('path');
 const route = require('./server/routes/router')
 const connectDB = require('./server/database/connection');
-
+const assetsPath=path.join(__dirname,'./assets')
+// console.log(assetsPath)
 const app = express();
 
 dotenv.config( { path : 'config.env'} )
@@ -25,9 +26,8 @@ app.set("view engine", "ejs")
 //app.set("views", path.resolve(__dirname, "views/ejs"))
 
 // load assets
-app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
-app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
-app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
+app.use(express.static(assetsPath))
+
 
 // load routers
 // app.use('/', require('./server/routes/router'))
