@@ -27,3 +27,10 @@ exports.update_user = (req, res) =>{
             res.send(err);
         })
 }
+
+exports.PageNotFound=(req,res)=>{
+    res.render('404',{
+        message:'Error',
+        status:'404'
+    })
+}
